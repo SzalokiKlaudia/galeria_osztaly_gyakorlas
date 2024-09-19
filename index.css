@@ -1,0 +1,72 @@
+
+*{
+    box-sizing: border-box; 
+    margin: 0;
+    padding: 0;
+}
+
+#fokep{
+   max-height: 100%;
+   max-width: 100%;
+   object-fit: contain;
+    
+}
+
+#fokepbox{
+    width: 100%;
+
+    background-color: bisque;
+    padding: 1rem 0.5rem 1rem 0.5rem;
+    border: 1px solid gray;
+    margin: 1px 1px;
+}
+
+.gombkontener{
+    border: 1px solid gray;
+   
+}
+
+button img{
+    width: 36px;
+    height: 36px;
+}
+
+
+
+.kiskep{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 2px solid gray;
+    padding: 0.2rem;
+}
+
+#kiskepek{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-auto-rows: 100px;
+  
+    
+}
+
+@media (max-width: 630px) {
+    .w-50{
+        width: 90% !important;
+    }
+    .galeria{
+        flex-wrap: wrap;
+    }
+    .leftbox{
+        order: 1;
+    }
+    .rightbox{
+        order: 2;
+    }
+    
+}
+
+
+
+
+
