@@ -7,7 +7,6 @@ export default class Kartya{
    constructor(aktElem,fokep,fokepBox){
       this.#aktElem= aktElem //lsta valahanyadik eleme
       console.log(aktElem)
-     
       this.fokep = fokep
       this.fokepBox = fokepBox
       console.log(this.fokep)
@@ -52,8 +51,7 @@ export default class Kartya{
    setCim(index){
       //console.log(this.foCim)
      const kepCim = kepek[index].cim
-      $(this.foCim).text(kepCim);
-
+      $(this.foCim).text(kepCim)
 
    }
 

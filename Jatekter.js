@@ -38,7 +38,6 @@ export default class Jatekter{
             }
             $(elem).on("click",(event) => { //klikk eseményt teszek mindegyikre
                 const kepId = $(elem).attr("id") //kinyerem az id-ját a kattintott elemre
-                this.setMegjelenitendokepIndex(kepId)
                 console.log(this.megjelenitendoKepIndex,"ez a kép indexe")
                 this.kartya.setAktElem(this.megjelenitendoKepIndex)
                 //console.log(szulo)
@@ -50,8 +49,6 @@ export default class Jatekter{
                 this.kartya.setCim(kepId)
                 this.kartya.setLeiras(kepId)
 
-                //new Kartya(this.lista[megjelenitendoKepIndexe],elem,szulo)
-
             })
         
         })
@@ -59,11 +56,7 @@ export default class Jatekter{
 
     }
 
-    setMegjelenitendokepIndex(kepId){
-        this.megjelenitendoKepIndex = kepId
-
-    }
-
+  
     #torolAktivOsztaly(kisKepek,elem){
         //console.log("beléptem")
         //console.log(kisKepek)

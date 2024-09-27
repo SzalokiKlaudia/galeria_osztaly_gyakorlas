@@ -9,10 +9,6 @@ import { kepek } from "./adatok.js";
 import Kartya from "./Kartya.js";
 import Jatekter from "./Jatekter.js";
 
-const fokep = $("#fokep")
-const fokepBox = $("#fokepbox")
-const aktEelem = kepek[0]
-
 
 const kisKepBox = $("#kiskepek")
 
