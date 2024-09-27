@@ -16,7 +16,6 @@ export default class Kartya{
       this.foCim = $(".focim")
       this.leiras = $(".leiras")
       this.gombok = $(".gomb")
-      this.esemenyKezelo()
       //console.log(this.gombok) meghívtam a gombokat
      
   
@@ -71,11 +70,5 @@ export default class Kartya{
     
    }
 
-   esemenyKezelo(){
-      this.gombok.on("click",() => {
-         const e = new CustomEvent("kivalaszt", {detail: this.#aktElem})
-         //console.log(this.#aktElem)
-         window.dispatchEvent(e)
-      })
-   }
+
 }
