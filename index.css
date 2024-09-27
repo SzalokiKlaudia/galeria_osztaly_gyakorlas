@@ -39,6 +39,7 @@ button img{
     object-fit: cover;
     border: 2px solid gray;
     padding: 0.2rem;
+    filter: grayscale(1); 
 }
 
 #kiskepek{
@@ -49,6 +50,14 @@ button img{
   
     
 }
+
+.active{
+  
+    object-fit: cover;
+    filter: grayscale(0) !important; /* ha aktív akkor szines*/
+}
+
+
 
 @media (max-width: 630px) {
     .w-50{

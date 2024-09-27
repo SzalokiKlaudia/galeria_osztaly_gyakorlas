@@ -11,14 +11,12 @@ import Jatekter from "./Jatekter.js";
 
 const fokep = $("#fokep")
 const fokepBox = $("#fokepbox")
+const aktEelem = kepek[0]
 
-
-let k = new Kartya(kepek[0],fokep,fokepBox)
-
-//console.log(Kartya)
 
 const kisKepBox = $("#kiskepek")
 
 
 new Jatekter(kepek,kisKepBox)
+
 

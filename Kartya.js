@@ -1,25 +1,39 @@
+import { kepek } from "./adatok.js"
+import Jatekter from "./Jatekter.js"
+
 export default class Kartya{
-   #elem = []
+   #aktElem = {}
    
-   constructor(elem,fokep,fokepBox){
-      this.#elem= elem
+   constructor(aktElem,fokep,fokepBox){
+      this.#aktElem= aktElem //lsta valahanyadik eleme
+      console.log(aktElem)
+     
       this.fokep = fokep
       this.fokepBox = fokepBox
+      console.log(this.fokep)
       this.#fokepMegjelenit()
       this.#feliratokMegjelenit()
+      this.foCim = $(".focim")
+      this.leiras = $(".leiras")
+      this.gombok = $(".gomb")
+      this.esemenyKezelo()
+      //console.log(this.gombok) meghívtam a gombokat
+     
+  
    }
 
    #fokepMegjelenit(){
-      //console.log(this.fokep)
-      this.fokep.attr("src","kepek/" + this.#elem.eleres)
+      console.log(this.#aktElem.eleres)
+      
+      this.fokep.attr("src","kepek/" + this.#aktElem.eleres)
       
    }
 
    #feliratokMegjelenit(){
       this.#feliratokTorlese()
-      this.fokepBox.prepend(`<h4 class = "focim">${this.#elem.cim}</h4>
+      this.fokepBox.prepend(`<h4 class = "focim">${this.#aktElem.cim}</h4>
                            `)
-      this.fokepBox.append(`<p class = "leiras">${this.#elem.leiras}</p>
+      this.fokepBox.append(`<p class = "leiras">${this.#aktElem.leiras}</p>
                            `)
 
    }
@@ -29,15 +43,39 @@ export default class Kartya{
       this.fokepBox.find(".leiras").remove()
    }
 
-   foKepValtozik(){
-      const kisKepId = this.#elem.id
-      console.log(kisKepId)
-   }
+  
 
    setFokep(src){
       this.fokep.attr("src", src);
       console.log("Elérési útvonal" + src)
    }
 
+   setCim(index){
+      //console.log(this.foCim)
+     const kepCim = kepek[index].cim
+      $(this.foCim).text(kepCim);
 
+
+   }
+
+   setLeiras(index){
+     
+      const kepLeiras = kepek[index].leiras
+      $(this.leiras).text(kepLeiras)
+
+   }
+
+   setAktElem(indexedik){
+      //console.log(kepek[indexedik])
+      this.#aktElem = kepek[indexedik]
+    
+   }
+
+   esemenyKezelo(){
+      this.gombok.on("click",() => {
+         const e = new CustomEvent("kivalaszt", {detail: this.#aktElem})
+         //console.log(this.#aktElem)
+         window.dispatchEvent(e)
+      })
+   }
 }
